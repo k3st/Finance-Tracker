@@ -4,11 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finance Tracker</title>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    SPAYLATER <br />
-    Monthly <br />
-    Loans <br />
-    Transactions
+    <h1>SPAYLATER</h1>
+
+    <div class="calculator">
+      <h2>Loan/Debt Calculator</h2>
+
+      <p>Monthly Due:</p>
+
+      <div class="total-loan">
+        Total Loan: $<span id="totalLoan">0.00</span>
+      </div>
+      <div class="panel">
+        <button class="action-panel js-action-panel">Click</button>
+        <div class="content js-content" ,id="content">
+          This is the text that will be shown and hidden.
+        </div>
+        <div class="buttons js-buttons">
+          <button id="addLoan">Add Loan</button>
+          <button id="makePayment">Make Payment</button>
+        </div>
+      </div>
+
+      <h4>Transactions</h4>
+      <table>
+        <tr>
+          <td>Date</td>
+          <td>Description</td>
+          <td>Amount</td>
+          <td>Period</td>
+        </tr>
+        <tr>
+          <td>7/20</td>
+          <td>Add Loan</td>
+          <td>500</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>7/15</td>
+          <td>Due Payment</td>
+          <td>200</td>
+          <td>N/A</td>
+        </tr>
+      </table>
+    </div>
+
+    <script type="module" src="./scripts/actionPanel.js"></script>
   </body>
 </html>
