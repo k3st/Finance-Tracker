@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan/Debt Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+      }
+      .calculator {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      .calculator h2 {
+        margin-top: 0;
+      }
+      .input-group {
+        margin-bottom: 10px;
+      }
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .input-group input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+      .buttons button {
+        padding: 10px;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 48%;
+      }
+      .buttons button:disabled {
+        background-color: #ccc;
+      }
+      .total-loan {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <h2>Loan/Debt Calculator</h2>
+      <div class="input-group">
+        <label for="transactionAmount">Amount:</label>
+        <input
+          type="number"
+          id="transactionAmount"
+          placeholder="Enter amount"
+        />
+      </div>
+      <div class="buttons">
+        <button id="addLoan">Add Loan</button>
+        <button id="makePayment">Make Payment</button>
+      </div>
+      <div class="total-loan">
+        Total Loan: $<span id="totalLoan">0.00</span>
+      </div>
+    </div>
+
+    <script>
+      let totalLoan = 0;
+
+      function updateTotalLoan() {
+        document.getElementById("totalLoan").textContent = totalLoan.toFixed(2);
+      }
+
+      document.getElementById("addLoan").addEventListener("click", () => {
+        const amount = parseFloat(
+          document.getElementById("transactionAmount").value
+        );
+        if (!isNaN(amount) && amount > 0) {
+          totalLoan += amount;
+          updateTotalLoan();
+        } else {
+          alert("Please enter a valid amount to add.");
+        }
+        document.getElementById("transactionAmount").value = "";
+      });
+
+      document.getElementById("makePayment").addEventListener("click", () => {
+        const amount = parseFloat(
+          document.getElementById("transactionAmount").value
+        );
+        if (!isNaN(amount) && amount > 0) {
+          if (amount > totalLoan) {
+            alert("Payment amount exceeds the total loan.");
+          } else {
+            totalLoan -= amount;
+            updateTotalLoan();
+          }
+        } else {
+          alert("Please enter a valid amount to pay.");
+        }
+        document.getElementById("transactionAmount").value = "";
+      });
+
+      updateTotalLoan();
+    </script>
+  </body>
+</html>
