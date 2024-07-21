@@ -1,4 +1,4 @@
-const transaction = [{ name: "mouse", date: "july 20", months: 3, price: 500 }];
+import { displayRecords } from "./renderTransactions.js";
 
 function addTransaction() {
   let addList = "";
@@ -38,4 +38,5 @@ document.getElementById("makePayment").addEventListener("click", () => {
   }
 });
 
+displayRecords();
 updateTotalLoan();
