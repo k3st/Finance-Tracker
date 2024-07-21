@@ -1,18 +1,27 @@
 // import { updateTotalLoan } from "../scripts/addItem.js";
 
-document.querySelector(".js-action-panel").addEventListener("click", () => {
+let display = 1;
+document.querySelector(".js-toggle-button").addEventListener("click", () => {
   showAddItem();
 });
 function showAddItem() {
   console.log("showAddItem");
-  const text = document.querySelector(".js-content");
-  if (text.style.display === "none") {
-    text.style.display = "block";
-    this.textContent = "Hide Text";
+  const div = document.getElementById("action-panel");
+  if (display === 1) {
+    div.style.display = "block";
+    display = 0;
   } else {
-    text.style.display = "none";
-    this.textContent = "Show Text";
+    div.style.display = "none";
+    display = 1;
   }
+
+  // if (div.style.display === "none") {
+  //   div.style.display = "block";
+  //   this.textContent = "Hide Text";
+  // } else {
+  //   text.style.display = "none";
+  //   this.textContent = "Show Text";
+  // }
 }
 
 function addTodo() {
