@@ -7,21 +7,25 @@ let totalLoan = 0;
 
 function updateTotalLoan() {
   document.getElementById("totalLoan").textContent = totalLoan.toFixed(2);
+  document.getElementById("selectedDate").value = "";
+  document.getElementById("inputAmount").value = "";
 }
 
 document.getElementById("addLoan").addEventListener("click", () => {
-  const amount = parseFloat(document.getElementById("transactionAmount").value);
-  if (!isNaN(amount) && amount > 0) {
+  const amount = parseFloat(document.getElementById("inputAmount").value);
+
+  let date = document.getElementById("selectedDate").value;
+  console.log(date);
+  if (!isNaN(amount) && amount > 0 && date != null) {
     totalLoan += amount;
     updateTotalLoan();
   } else {
     alert("Please enter a valid amount to add.");
   }
-  document.getElementById("transactionAmount").value = "";
 });
 
 document.getElementById("makePayment").addEventListener("click", () => {
-  const amount = parseFloat(document.getElementById("transactionAmount").value);
+  const amount = parseFloat(document.getElementById("inputAmount").value);
   if (!isNaN(amount) && amount > 0) {
     if (amount > totalLoan) {
       alert("Payment amount exceeds the total loan.");
@@ -32,7 +36,6 @@ document.getElementById("makePayment").addEventListener("click", () => {
   } else {
     alert("Please enter a valid amount to pay.");
   }
-  document.getElementById("transactionAmount").value = "";
 });
 
 updateTotalLoan();

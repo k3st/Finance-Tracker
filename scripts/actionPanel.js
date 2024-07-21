@@ -6,7 +6,7 @@ document.querySelector(".js-toggle-button").addEventListener("click", () => {
 });
 function showAddItem() {
   console.log("showAddItem");
-  const div = document.getElementById("action-panel");
+  const div = document.getElementById("js-action-panel");
   if (display === 1) {
     div.style.display = "block";
     display = 0;
@@ -14,29 +14,9 @@ function showAddItem() {
     div.style.display = "none";
     display = 1;
   }
-
-  // if (div.style.display === "none") {
-  //   div.style.display = "block";
-  //   this.textContent = "Hide Text";
-  // } else {
-  //   text.style.display = "none";
-  //   this.textContent = "Show Text";
-  // }
 }
-
-function addTodo() {
-  const inputElement = document.querySelector(".js-name-input");
-  const name = inputElement.value;
-  const dateInputElement = document.querySelector(".js-due-date-input");
-  const dueDate = dateInputElement.value;
-
-  todoList.push({
-    // name: name,
-    // dueDate: dueDate,
-    name,
-    dueDate,
+document
+  .getElementById("js-action-panel")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
   });
-
-  inputElement.value = "";
-  renderTodoList();
-}
