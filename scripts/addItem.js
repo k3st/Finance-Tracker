@@ -1,8 +1,5 @@
-import { displayRecords } from "./renderTransactions.js";
+import { displayRecords, dataList, addData } from "./renderTransactions.js";
 
-function addTransaction() {
-  let addList = "";
-}
 let totalLoan = 0;
 
 function updateTotalLoan() {
@@ -13,11 +10,17 @@ function updateTotalLoan() {
 
 document.getElementById("addLoan").addEventListener("click", () => {
   const amount = parseFloat(document.getElementById("inputAmount").value);
-
   let date = document.getElementById("selectedDate").value;
-  console.log(date);
   if (!isNaN(amount) && amount > 0 && date != null) {
     totalLoan += amount;
+    let newData = {
+      date: date,
+      desc: "Add Credit",
+      amount: amount,
+      period: 1,
+    };
+
+    addData(newData);
     updateTotalLoan();
   } else {
     alert("Please enter a valid amount to add.");
@@ -31,6 +34,15 @@ document.getElementById("makePayment").addEventListener("click", () => {
       alert("Payment amount exceeds the total loan.");
     } else {
       totalLoan -= amount;
+
+      let newData = {
+        date: date,
+        desc: "Pay due payment",
+        amount: amount,
+        period: null,
+      };
+
+      addData(newData);
       updateTotalLoan();
     }
   } else {

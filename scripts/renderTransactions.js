@@ -1,17 +1,22 @@
-// export let cart = JSON.parse(localStorage.getItem('cart'));
-// function saveToStorage() {
-//   localStorage.setItem("cart", JSON.stringify(cart));
-// }
+import { saveToStorage, loadFromStorage } from "../data.js";
 
-// import dataInstance from "../data";
+export let dataList = [
+  { date: "oneDate", desc: "oneDesc", amount: 1000, period: 1 },
+  { date: "twoDate", desc: "twoDesc", amount: 2000, period: 2 },
+  { date: "threeDate", desc: "threeDesc", amount: 3000, period: 3 },
+];
+
+export function addData(newDataList) {
+  console.log("fun addData()");
+  dataList.push(newDataList);
+
+  displayRecords();
+  console.log(dataList);
+  saveToStorage();
+}
 
 export function displayRecords() {
-  let dataList = [
-    { date: "oneDate", desc: "oneDesc", amount: 1000, period: 1 },
-    { date: "twoDate", desc: "twoDesc", amount: 2000, period: 2 },
-    { date: "threeDate", desc: "threeDesc", amount: 3000, period: 3 },
-  ];
-  console.log(dataList);
+  loadFromStorage();
   let recordsHTML = "";
 
   let headerHTML = `
@@ -37,20 +42,4 @@ export function displayRecords() {
 
   document.querySelector(".js-div-tr").innerHTML = recordsHTML;
 }
-
-function addTodo() {
-  const inputElement = document.querySelector(".js-name-input");
-  const name = inputElement.value;
-  const dateInputElement = document.querySelector(".js-due-date-input");
-  const dueDate = dateInputElement.value;
-
-  todoList.push({
-    // name: name,
-    // dueDate: dueDate,
-    name,
-    dueDate,
-  });
-
-  inputElement.value = "";
-  renderTodoList();
-}
+loadFromStorage();
