@@ -7,18 +7,30 @@
 
 export function displayRecords() {
   let dataList = [
-    { date: "oneDate", desc: "oneDesc", period: 1 },
-    { date: "twoDate", desc: "twoDesc", period: 2 },
-    { date: "threeDate", desc: "threeDesc", period: 3 },
+    { date: "oneDate", desc: "oneDesc", amount: 1000, period: 1 },
+    { date: "twoDate", desc: "twoDesc", amount: 2000, period: 2 },
+    { date: "threeDate", desc: "threeDesc", amount: 3000, period: 3 },
   ];
-  console.log("displayrecords");
+  console.log(dataList);
   let recordsHTML = "";
+
+  let headerHTML = `
+  <tr>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Amount</th>
+    <th>Period</th>
+  </tr>
+  `;
+
+  recordsHTML = recordsHTML + headerHTML;
   dataList.forEach((data) => {
-    recordsHTML += `
+    recordsHTML += `    
     <tr> 
-      <td>${dataList.date}</td>
-      <td>${dataList.desc}</td>
-      <td>${dataList.period}</td>
+      <td>${data.date}</td>
+      <td>${data.desc}</td>
+      <td>${data.amount}</td>
+      <td>${data.period}</td>
     </tr>
     `;
   });

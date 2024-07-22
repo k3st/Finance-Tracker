@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finance Tracker</title>
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/externalStyle.css">
 </head>
 
 <body>
@@ -37,31 +38,15 @@
     </form>
 
     <h4>Transactions</h4>
-    <div class="js-div-tr">shows on here</div>
-    <table>
-      <tr>
-        <td>Date</td>
-        <td>Description</td>
-        <td>Amount</td>
-        <td>Period</td>
-      </tr>
-      <tr>
-        <td>7/20</td>
-        <td>Add Loan</td>
-        <td>500</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>7/15</td>
-        <td>Due Payment</td>
-        <td>200</td>
-        <td>N/A</td>
-      </tr>
-    </table>
+    <div class="container">
+      <table class="div-tr js-div-tr">
+      </table>
+    </div>
   </div>
 
   <script type="module" src="./scripts/actionPanel.js"></script>
   <script type="module" src="./scripts/addItem.js"></script>
+  <script type="module" src="./scripts/externalScript.js"></script>
 </body>
 
 </html>
