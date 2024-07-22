@@ -1,19 +1,11 @@
-function Data() {
-  let dataRecords = undefined;
-  function saveToStorage() {
-    localStorage.setItem("key-TotalLoan", JSON.stringify(dataRecords));
-  }
-
-  function loadFromStorage() {
-    dataRecords = JSON.parse(localStorage.getItem("key-TotalLoan"));
-    return dataRecords;
-  }
-
-  return { saveToStorage, loadFromStorage };
+import { dataList } from "./scripts/renderTransactions.js";
+export function saveToStorage() {
+  localStorage.setItem("key-total-loan", JSON.stringify(dataList));
+  console.log("saveToStorage");
 }
 
-const dataInstance = Data();
-
-dataInstance.loadFromStorage();
-
-export default dataInstance;
+export function loadFromStorage() {
+  const dataRecords = JSON.parse(localStorage.getItem("key-total-loan"));
+  let dataList = dataRecords;
+  return dataList;
+}
