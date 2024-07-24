@@ -1,5 +1,5 @@
-import { displayRecords, dataList, addData } from "./renderTransactions.js";
-
+import { displayRecords, addData } from "./renderTransactions.js";
+import { dataList } from "../data.js";
 let totalLoan = 0;
 
 function updateTotalLoan() {

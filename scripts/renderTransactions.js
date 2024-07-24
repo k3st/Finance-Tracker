@@ -1,10 +1,10 @@
-import { saveToStorage, loadFromStorage } from "../data.js";
+import { saveToStorage, dataList, loadFromStorage } from "../data.js";
 
-export let dataList = [
-  { date: "oneDate", desc: "oneDesc", amount: 1000, period: 1 },
-  { date: "twoDate", desc: "twoDesc", amount: 2000, period: 2 },
-  { date: "threeDate", desc: "threeDesc", amount: 3000, period: 3 },
-];
+// export let dataList = [
+//   { date: "oneDate", desc: "oneDesc", amount: 1000, period: 1 },
+//   { date: "twoDate", desc: "twoDesc", amount: 2000, period: 2 },
+//   { date: "threeDate", desc: "threeDesc", amount: 3000, period: 3 },
+// ];
 
 export function addData(newDataList) {
   console.log("fun addData()");
@@ -16,7 +16,6 @@ export function addData(newDataList) {
 }
 
 export function displayRecords() {
-  loadFromStorage();
   let recordsHTML = "";
 
   let headerHTML = `
@@ -43,3 +42,4 @@ export function displayRecords() {
   document.querySelector(".js-div-tr").innerHTML = recordsHTML;
 }
 loadFromStorage();
+displayRecords();
