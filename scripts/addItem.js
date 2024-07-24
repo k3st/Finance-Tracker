@@ -1,9 +1,7 @@
 import { displayRecords, addData } from "./renderTransactions.js";
 import { dataList } from "../data.js";
-let totalLoan = 0;
 
-function updateTotalLoan() {
-  document.getElementById("totalLoan").textContent = totalLoan.toFixed(2);
+function resetInput() {
   document.getElementById("selectedDate").value = "";
   document.getElementById("inputAmount").value = "";
 }
@@ -21,7 +19,7 @@ document.getElementById("addLoan").addEventListener("click", () => {
     };
 
     addData(newData);
-    updateTotalLoan();
+    resetInput();
   } else {
     alert("Please enter a valid amount to add.");
   }
@@ -37,13 +35,13 @@ document.getElementById("makePayment").addEventListener("click", () => {
 
       let newData = {
         date: date,
-        desc: "Pay due payment",
+        desc: "Pay due",
         amount: amount,
         period: null,
       };
 
       addData(newData);
-      updateTotalLoan();
+      resetInput();
     }
   } else {
     alert("Please enter a valid amount to pay.");
@@ -51,4 +49,3 @@ document.getElementById("makePayment").addEventListener("click", () => {
 });
 
 displayRecords();
-updateTotalLoan();

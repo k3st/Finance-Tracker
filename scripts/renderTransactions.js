@@ -15,10 +15,22 @@ export function addData(newDataList) {
   saveToStorage();
 }
 
+function computeTotalLoan() {
+  let total = 0;
+
+  dataList.forEach((data) => {
+    if (data.desc === "Add Credit") total += data.amount;
+    else if (data.desc === "Pay due") total -= data.amount;
+    else total = total;
+  });
+
+  document.getElementById("totalLoan").textContent = total.toFixed(2);
+}
+
 export function displayRecords() {
   let recordsHTML = "";
-
   let headerHTML = `
+
   <tr>
     <th>Date</th>
     <th>Description</th>
@@ -28,6 +40,8 @@ export function displayRecords() {
   `;
 
   recordsHTML = recordsHTML + headerHTML;
+  computeTotalLoan();
+
   dataList.forEach((data) => {
     recordsHTML += `    
     <tr> 
