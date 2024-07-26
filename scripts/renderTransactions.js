@@ -70,7 +70,7 @@ export function displayRecordsTwo() {
     `;
   });
 
-  document.querySelector(".js-container").innerHTML = recordsHTML;
+  document.getElementById("js-container").innerHTML = recordsHTML;
 }
 loadFromStorage();
 displayRecordsTwo();

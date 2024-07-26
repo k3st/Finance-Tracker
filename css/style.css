@@ -22,16 +22,17 @@ body {
 }
 
 /* Style for buttons */
-button {
+button,
+input {
   padding: 10px;
-  margin-top: 15px;
+  margin: 15px 0px;
   cursor: pointer;
   border-radius: 5px;
+  font-size: 18px;
 }
 
 .toggle-button {
   padding: 5px 20px;
-  font-size: 14px;
   font-weight: bold;
   width: 60%;
 }
@@ -68,16 +69,13 @@ button {
 
 /* Style for the container with corner text elements */
 .container {
-  height: 55%;
   overflow-x: auto;
 }
 
 .container-record {
   position: relative;
-  width: 80%;
+  margin-bottom: 1vh;
   height: 8vh;
-  min-height: min-content;
-  margin: 10px 50px;
   border: none;
   background-color: #f9f9f9;
 }

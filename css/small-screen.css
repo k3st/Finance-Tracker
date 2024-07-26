@@ -1,16 +1,15 @@
-@media (max-width: 800px) {
+/* Smallest 0px - 800px */
+@media (max-width: 900px) {
   body {
     background-color: lightgreen;
   }
   .calculator {
     width: 90vw;
   }
-  .container-record {
-    margin: 0px;
-  }
 }
 
-@media (min-width: 800px) {
+/* Slightly Bigger 800px - 1499px */
+@media (min-width: 900px) {
   body {
     background-color: lavender;
   }
@@ -19,11 +18,12 @@
   }
 }
 
-@media (min-width: 1500px) {
+/* Bigger 1500px above*/
+@media (min-width: 1200px) {
   body {
     background-color: lightcoral;
   }
   .calculator {
-    width: 35vw;
+    width: 45vw;
   }
 }
