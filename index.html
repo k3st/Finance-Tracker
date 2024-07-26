@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Finance Tracker</title>
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/small-screen.css">
+
 </head>
 
 <body>
@@ -24,7 +26,7 @@
       <button class="toggle-button js-toggle-button">Add Transactions</button>
     </div>
     <form class="action-panel buttons" id="js-action-panel">
-      <label for="inputAmount"> Amount:</label>
+      <label for="inputAmount">Amount:</label>
       <input type="number" id="inputAmount" placeholder="Enter amount" required />
 
       <label for="selectedDate">Date:</label>
@@ -37,10 +39,7 @@
     </form>
 
     <h4>Transactions</h4>
-    <!-- <div class="container js-container"> -->
-    <div class="container">
-      <table class="div-tr js-div-tr"></table>
-
+    <div class="container js-container">
     </div>
   </div>
   <div class="clock" id="clock"></div>

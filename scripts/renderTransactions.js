@@ -73,4 +73,4 @@ export function displayRecordsTwo() {
   document.querySelector(".js-container").innerHTML = recordsHTML;
 }
 loadFromStorage();
-displayRecords();
+displayRecordsTwo();
