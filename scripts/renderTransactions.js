@@ -55,5 +55,22 @@ export function displayRecords() {
 
   document.querySelector(".js-div-tr").innerHTML = recordsHTML;
 }
+
+export function displayRecordsTwo() {
+  let recordsHTML = "";
+  computeTotalLoan();
+  console.log(dataList);
+  dataList.forEach((data) => {
+    recordsHTML += `    
+    <div class="container-record">      
+      <div class="corner-text top-left">(${data.period}) ${data.desc}</div>
+      <div class="corner-text top-right"> ${data.amount}</div>
+      <div class="corner-text bottom-right"> ${data.date}</div>
+    </div>
+    `;
+  });
+
+  document.querySelector(".js-container").innerHTML = recordsHTML;
+}
 loadFromStorage();
 displayRecords();

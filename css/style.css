@@ -56,6 +56,47 @@ button {
   box-sizing: border-box;
 }
 
+.container-record {
+  position: relative;
+  width: 80%;
+  height: 150%;
+  margin: 50px auto;
+  border: 2px solid red;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+/* Common styles for corner text elements */
+.corner-text {
+  position: absolute;
+  font-size: 1em;
+  padding: 5px;
+}
+
+/* Top-left corner */
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+/* Top-right corner */
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+/* Bottom-left corner */
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+/* Bottom-right corner */
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
 table,
 th,
 td {

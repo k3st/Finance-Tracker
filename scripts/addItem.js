@@ -1,4 +1,8 @@
-import { displayRecords, addData } from "./renderTransactions.js";
+import {
+  displayRecords,
+  addData,
+  displayRecordsTwo,
+} from "./renderTransactions.js";
 import { dataList } from "../data.js";
 
 function resetInput() {
@@ -44,4 +48,4 @@ document.getElementById("makePayment").addEventListener("click", () => {
   }
 });
 
-displayRecords();
+// displayRecordsTwo();
