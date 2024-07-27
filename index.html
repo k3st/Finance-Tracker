@@ -15,19 +15,20 @@
 
   <div class="calculator">
     <h2>Loan/Debt Calculator</h2>
+    <div class="main">
+      <p>Monthly Due:</p>
+      <p>Total Loan: $<span id="totalLoan">0.00</span>
+      </p>
 
-    <p>Monthly Due:</p>
-
-    <div class="total-loan">
-      Total Loan: $<span id="totalLoan">0.00</span>
+      <div class="center-container">
+        <button class="toggle-button js-toggle-button">Add Transactions</button>
+      </div>
     </div>
 
-    <div class="center-container">
-      <button class="toggle-button js-toggle-button">Add Transactions</button>
-    </div>
     <form class="action-panel buttons" id="js-action-panel">
       <label for="inputAmount">Amount:</label>
       <input type="number" id="inputAmount" placeholder="Enter amount" required />
+
 
       <label for="selectedDate">Date:</label>
       <input type="date" id="selectedDate" required />
@@ -38,6 +39,7 @@
       </div>
     </form>
 
+    <br>
     <h2>Transactions</h2>
     <div class="container" id="js-container">
     </div>

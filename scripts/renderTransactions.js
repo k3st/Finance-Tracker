@@ -10,7 +10,7 @@ export function addData(newDataList) {
   console.log("fun addData()");
   dataList.push(newDataList);
 
-  displayRecords();
+  displayRecordsTwo();
   console.log(dataList);
   saveToStorage();
 }
