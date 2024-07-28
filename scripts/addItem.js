@@ -1,8 +1,4 @@
-import {
-  displayRecords,
-  addData,
-  displayRecordsTwo,
-} from "./renderTransactions.js";
+import { addData } from "./renderTransactions.js";
 import { dataList } from "../data.js";
 
 function resetInput() {

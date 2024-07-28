@@ -2,7 +2,6 @@ export let dataList = JSON.parse(localStorage.getItem("key-total-loan"));
 
 export function saveToStorage() {
   localStorage.setItem("key-total-loan", JSON.stringify(dataList));
-  console.log("saveToStorage");
 }
 
 export function loadFromStorage() {
@@ -12,5 +11,4 @@ export function loadFromStorage() {
       { date: "2024-06-27", desc: "Add Credit", amount: 1000, period: 1 },
     ];
   }
-  console.log("loadFromStorage");
 }

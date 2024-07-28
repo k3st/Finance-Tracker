@@ -5,7 +5,6 @@ document.querySelector(".js-toggle-button").addEventListener("click", () => {
   showAddItem();
 });
 function showAddItem() {
-  console.log("showAddItem");
   const div = document.getElementById("js-action-panel");
   const containerHeight = document.getElementById("js-container");
   if (display === 1) {

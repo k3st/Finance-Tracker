@@ -7,11 +7,9 @@ import { saveToStorage, dataList, loadFromStorage } from "../data.js";
 // ];
 
 export function addData(newDataList) {
-  console.log("fun addData()");
   dataList.push(newDataList);
 
-  displayRecordsTwo();
-  console.log(dataList);
+  displayRecords();
   saveToStorage();
 }
 
@@ -29,37 +27,7 @@ function computeTotalLoan() {
 
 export function displayRecords() {
   let recordsHTML = "";
-  let headerHTML = `
-
-  <tr>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Amount</th>
-    <th>Period</th>
-  </tr>
-  `;
-
-  recordsHTML = recordsHTML + headerHTML;
   computeTotalLoan();
-
-  dataList.forEach((data) => {
-    recordsHTML += `    
-    <tr> 
-      <td>${data.date}</td>
-      <td>${data.desc}</td>
-      <td>${data.amount}</td>
-      <td>${data.period}</td>
-    </tr>
-    `;
-  });
-
-  document.querySelector(".js-div-tr").innerHTML = recordsHTML;
-}
-
-export function displayRecordsTwo() {
-  let recordsHTML = "";
-  computeTotalLoan();
-  console.log(dataList);
   dataList.forEach((data) => {
     recordsHTML += `    
     <div class="container-record">      
@@ -73,4 +41,4 @@ export function displayRecordsTwo() {
   document.getElementById("js-container").innerHTML = recordsHTML;
 }
 loadFromStorage();
-displayRecordsTwo();
+displayRecords();
