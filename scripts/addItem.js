@@ -43,5 +43,3 @@ document.getElementById("makePayment").addEventListener("click", () => {
     alert("Please enter a valid amount to pay.");
   }
 });
-
-// displayRecordsTwo();

@@ -1,10 +1,32 @@
 import { saveToStorage, dataList, loadFromStorage } from "../data.js";
 
-// export let dataList = [
-//   { date: "oneDate", desc: "oneDesc", amount: 1000, period: 1 },
-//   { date: "twoDate", desc: "twoDesc", amount: 2000, period: 2 },
-//   { date: "threeDate", desc: "threeDesc", amount: 3000, period: 3 },
-// ];
+let payableDue,
+  total = 0;
+let excessPayment = 0; /// add this function later
+
+function computeMonthlyDue(data) {
+  // const todaysMonth = new Date("2024-08-28").getMonth();
+
+  const todaysMonth = new Date().getMonth();
+  const isDueForThisMonth = new Date(data.date).getMonth() + data.period;
+  if (todaysMonth === isDueForThisMonth) payableDue += data.amount;
+  else payableDue = payableDue;
+
+  document.getElementById("monthly-due").textContent = payableDue.toFixed(2);
+}
+
+function dueDatePeriod(periods, selectedDates) {
+  const date = new Date(selectedDates);
+
+  for (let i = 0; (i) => period; i++) {
+    dueDate = today.getMonth();
+  }
+
+  let dueDate = date.getMonth() + periods;
+  console.log("done");
+
+  return dueDate;
+}
 
 export function addData(newDataList) {
   dataList.push(newDataList);
@@ -13,12 +35,15 @@ export function addData(newDataList) {
   saveToStorage();
 }
 
-function computeTotalLoan() {
-  let total = 0;
+function computeMonthlyAndTotalLoan() {
+  total = 0;
+  payableDue = 0;
 
   dataList.forEach((data) => {
-    if (data.desc === "Add Credit") total += data.amount;
-    else if (data.desc === "Pay due") total -= data.amount;
+    if (data.desc === "Add Credit") {
+      computeMonthlyDue(data);
+      total += data.amount;
+    } else if (data.desc === "Pay due") total -= data.amount;
     else total = total;
   });
 
@@ -27,7 +52,7 @@ function computeTotalLoan() {
 
 export function displayRecords() {
   let recordsHTML = "";
-  computeTotalLoan();
+  computeMonthlyAndTotalLoan();
   dataList.forEach((data) => {
     recordsHTML += `    
     <div class="container-record">      
