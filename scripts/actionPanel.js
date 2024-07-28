@@ -17,7 +17,6 @@ function showAddItem() {
     div.style.display = "none";
     display = 1;
     containerHeight.style.height = "75%";
-
     button.classList.remove("clicked-button");
   }
 }
