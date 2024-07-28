@@ -16,6 +16,13 @@ body {
   background-color: #f0f0f0;
   margin: 0;
 }
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 15%;
+}
 .main p {
   margin: 0;
   padding: 0.5vh;
@@ -33,9 +40,20 @@ input {
 }
 
 .toggle-button {
-  padding: 8px 5vw;
   font-weight: bold;
   width: 45%;
+  padding: 10px;
+  margin-top: 15px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.clicked-button {
+  background-color: #ccc;
+  color: black;
 }
 
 /* Style for the calculator container */
@@ -55,8 +73,10 @@ input {
 
 /* Style for the action panel */
 .action-panel {
+  padding: 3vh;
   margin: 15px 0;
   display: none;
+  background-color: #f0f0f0;
 }
 
 .action-panel label {
@@ -70,7 +90,7 @@ input {
 }
 
 #selectedDate {
-  width: 25%;
+  width: 30%;
 }
 
 /* Style for the container with corner text elements */

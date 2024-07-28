@@ -6,6 +6,8 @@ function resetInput() {
   document.getElementById("inputAmount").value = "";
 }
 
+document.querySelector("#selectedDate").valueAsDate = new Date();
+
 document.getElementById("addLoan").addEventListener("click", () => {
   const amount = parseFloat(document.getElementById("inputAmount").value);
   let date = document.getElementById("selectedDate").value;
